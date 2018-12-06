@@ -1,4 +1,4 @@
-<?php require_once(VIEW_PATH.'header.inc.php'); ?>
+﻿<?php require_once(VIEW_PATH.'header.inc.php'); ?>
 
 	
 	<link href="<?php echo $url;?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -29,7 +29,7 @@
 				    <tr>
 				      <th>#</th>
 				      <th>Nombre</th>
-				      <th>Fecha</th>
+				      <th>Telefono</th>
 				      <th><button ng-click="add()" class="btn btn-success btn-sm"><i class="fa fa-file-o" aria-hidden="true"></i></button>&nbsp;Nuevo</th>
 				    </tr>
 				  </thead>
@@ -37,7 +37,7 @@
 				  		<tr ng-repeat="persona in personas track by $index">
 				  			<td>{{ persona.id }}</td>
 				  			<td>{{ persona.nombre }}</td>
-							<td>{{ persona.fechaCreacion|limitTo:10 }}</td>
+							<td>{{ persona.telefono|limitTo:10 }}</td>
 							<td>
 								<button class="btn btn-primary btn-sm" ng-click="view(persona.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button> &nbsp;
 								<button class="btn btn-danger btn-sm" ng-click="delete(persona.id)" data-toggle='confirmation' data-singleton='true' data-placement='top'>  <i class="fa fa-times" aria-hidden="true"></i>Borrar</button>
@@ -63,7 +63,9 @@
 		                                <input ng-model="persona.nombre" class="form-control" required>
 		                            </div>
 		                        </div>
-		                        <div class="form-group row">
+		                       <div class="col-md-11">
+		                                <label>Telefono</label>
+		                                <input ng-model="persona.telefono" class="form-control" required>  <div class="form-group row">
 		                            <div class="col-md-11">
 		                                <label>Dirección</label>
 		                                <input ng-model="persona.direccion" class="form-control" required>
